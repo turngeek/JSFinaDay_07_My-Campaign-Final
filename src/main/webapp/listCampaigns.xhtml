@@ -12,7 +12,7 @@
 					<p:dataTable value="#{campaignListProducer.campaigns}"
 						var="campaign">
 						<p:column>
-							<p:commandButton onclick="confirmation.show()"
+							<p:commandButton onclick="PF('confirmation').show()"
 								actionListener=
 								"#{listCampaignsController
 									.doDeleteCampaign(campaign)}"
@@ -73,11 +73,11 @@
 						severity="alert"
 						widgetVar="confirmation">
 						<p:commandButton value="#{msg['listCampaigns.yes']}"
-							oncomplete="confirmation.hide()" ajax="false"
+							oncomplete="PF('confirmation').hide()" ajax="false"
 							actionListener="#{listCampaignsController
 								.commitDeleteCampaign}" />
 						<p:commandButton value="#{msg['listCampaigns.no']}"
-							onclick="confirmation.hide()" />
+							onclick="PF('confirmation').hide()" />
 					</p:confirmDialog>
 				</h:form>
 			</ui:define>
